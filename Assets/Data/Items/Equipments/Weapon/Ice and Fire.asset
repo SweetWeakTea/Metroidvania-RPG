@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2f046d820bc7b4fbd52fe37f1d20e8, type: 3}
+  m_Name: Ice and Fire
+  m_EditorClassIdentifier: 
+  itemType: 1
+  itemName: Ice and Fire
+  itemIcon: {fileID: 1398721256, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  dropChance: 6
+  equipmentType: 0
+  itemCooldown: 0
+  itemEffects:
+  - {fileID: 11400000, guid: 3caa0d04f617e3a4a9a2e6fc008f73b6, type: 2}
+  - {fileID: 11400000, guid: f5577257c1f61a14cb4c6f1faa843367, type: 2}
+  itemEffectDescription: 'Unique: Each 3rd attack you launch ice and fire projectiles.'
+  strength: 0
+  agility: 0
+  intelligence: 0
+  vitality: 0
+  damage: 0
+  critChance: 0
+  critPower: 0
+  Health: 0
+  armor: 0
+  evasion: 0
+  magicResistance: 0
+  fireDamage: 5
+  iceDamage: 7
+  lightingDamage: 0
+  craftingMaterials: []

@@ -1,0 +1,4 @@
+repository "RPG-UdemyCourse-Rewrite@tj_wechat_os_qy0_w5rhtf7yks8e6ycfxzvge@cloud.cn"
+  path "/"
+    br "/main"
+    co "/main"
