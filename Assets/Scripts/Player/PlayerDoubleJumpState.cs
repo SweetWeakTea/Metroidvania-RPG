@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJumpState : PlayerAirState
+public class PlayerDoubleJumpState : PlayerAirState
 {
-    public PlayerJumpState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
+    public PlayerDoubleJumpState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
 
@@ -24,13 +24,10 @@ public class PlayerJumpState : PlayerAirState
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            stateMachine.ChangeState(player.doubleJumpState);
-
         if (xInput != 0)
             player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
 
         if (rb.velocity.y < 0)
-            stateMachine.ChangeState(player.fallState);
+            stateMachine.ChangeState(player.doubleFallState);
     }
 }

@@ -31,7 +31,9 @@ public class Player : Entity
     public PlayerIdleState idleState { get; private set;}
     public PlayerMoveState moveState { get; private set;}
     public PlayerFallState fallState { get; private set;}
+    public PlayerDoubleFallState doubleFallState { get; private set;}
     public PlayerJumpState jumpState { get; private set;}
+    public PlayerDoubleJumpState doubleJumpState { get; private set;}
     public PlayerDashState dashState { get; private set; }
     public PlayerWallSlideState wallSlideState { get; private set; }
     public PlayerWallJumpState wallJumpState { get; private set; }
@@ -54,8 +56,10 @@ public class Player : Entity
 
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         moveState = new PlayerMoveState(this, stateMachine, "Move");
-        fallState = new PlayerFallState(this, stateMachine, "Jump");
+        fallState = new PlayerFallState(this, stateMachine, "Fall");
+        doubleFallState = new PlayerDoubleFallState(this, stateMachine, "DoubleFall");
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
+        doubleJumpState = new PlayerDoubleJumpState(this, stateMachine, "DoubleJump");
         dashState = new PlayerDashState(this, stateMachine, "Dash");
         wallSlideState = new PlayerWallSlideState(this, stateMachine, "WallSlide");
         wallJumpState = new PlayerWallJumpState(this, stateMachine, "Jump");

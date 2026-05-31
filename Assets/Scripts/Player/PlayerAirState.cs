@@ -13,6 +13,8 @@ public class PlayerAirState : PlayerState
     public override void Enter()
     {
         base.Enter();
+
+        stateTimer = .1f;
     }
 
     public override void Exit()
@@ -24,11 +26,14 @@ public class PlayerAirState : PlayerState
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCounter < 1)
+        if (player.IsWallDetected())
         {
-            stateMachine.ChangeState(player.jumpState);
-            jumpCounter++;
-            player.anim.SetInteger("JumpCounter", jumpCounter);
+            stateMachine.ChangeState(player.wallSlideState);
+        }
+
+        if (player.IsGroundDetected() && stateTimer < 0)
+        {
+            stateMachine.ChangeState(player.idleState);
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0))

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFallState : PlayerAirState
+public class PlayerDoubleFallState : PlayerAirState
 {
-    public PlayerFallState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
+    public PlayerDoubleFallState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
 
@@ -21,9 +21,6 @@ public class PlayerFallState : PlayerAirState
     public override void Update()
     {
         base.Update();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-            stateMachine.ChangeState(player.doubleJumpState);
 
         if (xInput != 0)
             player.SetVelocity(xInput * .8f * player.moveSpeed, rb.velocity.y);
